@@ -1,0 +1,1 @@
+<h2>Cleaning Tasks</h2>{% for task in tasks %}<p>{{ task.task_description }} - {% if task.completed %}Done{% else %}Pending{% endif %}</p>{% endfor %}
