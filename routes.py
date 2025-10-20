@@ -22,7 +22,7 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        hashed_pw = generate_password_hash(request.form['password'], method='sha256')
+        hashed_pw = generate_password_hash(request.form['password'], method='pbkdf2:sha256')
         new_user = User(username=request.form['username'], password=hashed_pw)
         db.session.add(new_user)
         db.session.commit()
